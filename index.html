@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jay Morse — People Ops & Talent Acquisition</title>
+<meta name="description" content="Jay Morse — People Operations & Talent Acquisition Leader. 10+ years building hiring infrastructure at growth-stage startups.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg1:#0F172A;--bg2:#1E293B;--bg3:#334155;--teal:#0D9488;--tealL:#14B8A6;--tealGlow:rgba(13,148,136,0.08);--w:#F8FAFC;--g3:#CBD5E1;--g4:#94A3B8;--g5:#64748B;--font:'Outfit',sans-serif;--mono:'JetBrains Mono',monospace;--max:960px}
+html{scroll-behavior:smooth}
+body{background:var(--bg1);font-family:var(--font);color:var(--g4);line-height:1.6}
+.scroll-progress{position:fixed;top:0;left:0;height:3px;background:var(--teal);z-index:200;width:0%;transition:width 0.1s}
+.top-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,23,42,0.85);backdrop-filter:blur(16px);border-bottom:1px solid rgba(51,65,85,0.4);padding:12px 0;opacity:0;transform:translateY(-100%);transition:all 0.3s ease}
+.top-nav.visible{opacity:1;transform:translateY(0)}
+.top-nav-inner{max-width:var(--max);margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between}
+.top-nav .nav-name{font-size:14px;font-weight:700;color:var(--w)}
+.top-nav .nav-links{display:flex;gap:20px}
+.top-nav .nav-links a{font-size:12px;color:var(--g5);text-decoration:none;transition:color 0.2s;letter-spacing:0.5px}
+.top-nav .nav-links a:hover{color:var(--teal)}
+section{padding:100px 32px;max-width:var(--max);margin:0 auto}
+.section-divider{width:100%;height:1px;background:var(--bg3);max-width:var(--max);margin:0 auto}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.hero .deco{position:absolute;border-radius:50%;pointer-events:none;background:radial-gradient(circle,var(--tealGlow) 0%,transparent 70%)}
+.hero .deco-1{width:500px;height:500px;top:-120px;right:-100px}
+.hero .deco-2{width:300px;height:300px;bottom:100px;right:100px}
+.hero .badge{display:inline-block;background:var(--teal);color:#fff;padding:5px 18px;border-radius:20px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:2px;margin-bottom:16px}
+.hero h1{font-size:clamp(40px,7vw,64px);font-weight:800;color:var(--w);line-height:1.05;letter-spacing:-2px}
+.hero .subtitle{font-size:clamp(16px,2vw,20px);color:var(--teal);font-weight:500;margin-top:8px}
+.hero .divider-line{width:48px;height:2px;background:var(--bg3);margin:24px 0}
+.hero .desc{font-size:15px;max-width:520px}
+.hero .companies{font-size:12px;color:var(--g5);letter-spacing:2px;margin-top:20px;text-transform:uppercase}
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:var(--bg2);border-radius:12px;border:1px solid var(--bg3);overflow:hidden;margin-top:48px}
+.stats-strip .stat{text-align:center;padding:24px 16px;border-right:1px solid var(--bg3)}
+.stats-strip .stat:last-child{border-right:none}
+.stats-strip .num{font-size:clamp(24px,3vw,32px);font-weight:800;color:var(--teal);font-family:var(--mono)}
+.stats-strip .lbl{font-size:10px;color:var(--g5);text-transform:uppercase;letter-spacing:2px;margin-top:4px}
+h2{font-size:clamp(28px,4vw,40px);font-weight:800;color:var(--w);letter-spacing:-1px}
+.teal-bar{width:40px;height:3px;background:var(--teal);margin:10px 0 16px}
+.section-intro{font-size:15px;max-width:600px;margin-bottom:32px}
+.cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cap-card{background:var(--bg2);border-radius:10px;padding:24px;border-left:3px solid var(--teal);transition:transform 0.25s,box-shadow 0.25s}
+.cap-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,0.3)}
+.cap-card .icon{font-size:22px;margin-bottom:10px}
+.cap-card h3{font-size:15px;font-weight:700;color:var(--w);margin-bottom:6px}
+.cap-card p{font-size:13px;line-height:1.5}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+.panel{background:var(--bg2);border-radius:10px;padding:24px}
+.panel-title{font-size:15px;font-weight:700;color:var(--w);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.bar-row{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.bar-label{width:100px;font-size:13px;text-align:right;flex-shrink:0}
+.bar-track{flex:1;height:22px;border-radius:4px;overflow:hidden;background:rgba(51,65,85,0.3)}
+.bar-fill{height:100%;border-radius:4px;transition:width 1.2s ease}
+.bar-fill.ind{background:var(--bg3)}
+.bar-fill.me{background:var(--teal)}
+.bar-val{font-size:13px;font-weight:600;min-width:36px;margin-left:8px}
+.savings{background:var(--bg2);border:1px solid var(--teal);border-radius:10px;padding:24px;margin-top:0}
+.savings .math{font-size:15px;line-height:2}
+.savings .big{font-size:20px;font-weight:800;color:var(--teal);font-family:var(--mono)}
+.vol-tbl{width:100%;border-collapse:collapse;margin-top:12px;font-size:14px}
+.vol-tbl th{color:var(--teal);font-weight:600;padding:8px 14px;text-align:center;border-bottom:1px solid var(--bg3)}
+.vol-tbl td{padding:8px 14px;text-align:center;color:var(--g3)}
+.vol-tbl tr.hl td{color:var(--w);font-weight:700}
+.wf-row{display:flex;align-items:flex-start;gap:16px;padding:16px 18px;border-radius:8px;margin-bottom:8px;border-left:3px solid var(--teal)}
+.wf-row:nth-child(odd){background:var(--bg2)}
+.wf-row:nth-child(even){background:rgba(30,41,59,0.5)}
+.wf-row .wf-icon{font-size:22px;flex-shrink:0;margin-top:2px}
+.wf-row h4{font-size:14px;font-weight:600;color:var(--w)}
+.wf-row p{font-size:13px;margin-top:2px}
+.flow{display:flex;flex-direction:column}
+.step{display:flex;gap:14px;position:relative}
+.step-num{width:32px;height:32px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;flex-shrink:0;z-index:1}
+.step-line{position:absolute;left:15px;top:32px;width:2px;height:calc(100% - 12px);background:var(--bg3)}
+.step:last-child .step-line{display:none}
+.step-content{padding-bottom:20px}
+.step-content h4{font-size:14px;font-weight:600;color:var(--w)}
+.step-content p{font-size:12px;margin-top:2px}
+.panel ul{list-style:none;padding:0}
+.panel li{font-size:13px;color:var(--g3);padding:4px 0 4px 16px;position:relative}
+.panel li::before{content:'';position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--teal);opacity:0.5}
+.hb-row{display:flex;gap:12px;margin-bottom:10px;align-items:baseline}
+.hb-label{font-size:13px;font-weight:600;color:var(--teal);min-width:110px;flex-shrink:0}
+.hb-val{font-size:13px;color:var(--g3);line-height:1.5}
+.infra-item{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.infra-item .ii-icon{font-size:18px}
+.infra-item span{font-size:14px;color:var(--g3)}
+.tl-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px}
+.tl-card{background:var(--bg2);border-radius:10px;padding:20px;border-top:3px solid var(--teal)}
+.tl-card .tl-label{font-size:11px;font-weight:600;color:var(--teal);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.tl-card h3{font-size:16px;font-weight:700;color:var(--w);margin-bottom:12px}
+.funnel{display:flex;flex-direction:column;align-items:center;gap:8px}
+.f-bar{display:flex;align-items:center;justify-content:space-between;border-radius:6px;padding:10px 18px;background:var(--bg3);transition:transform 0.2s}
+.f-bar:hover{transform:scale(1.02)}
+.f-bar .f-stage{font-size:14px;font-weight:600;color:var(--g3)}
+.f-bar .f-vol{font-size:13px;color:var(--g4)}
+.f-bar .f-conv{font-size:13px;font-weight:600;color:var(--teal)}
+.f-bar.hire{background:var(--teal)}
+.f-bar.hire .f-stage,.f-bar.hire .f-vol,.f-bar.hire .f-conv{color:#fff}
+.donut-wrap{display:flex;flex-direction:column;align-items:center;padding:20px}
+.donut svg{width:220px;height:220px;transform:rotate(-90deg)}
+.donut-legend{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:20px;justify-content:center}
+.donut-legend span{font-size:12px;color:var(--g4);display:flex;align-items:center;gap:6px}
+.donut-legend .dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}
+.kpi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.kpi{background:var(--bg2);border-radius:10px;padding:20px}
+.kpi .kpi-icon{font-size:20px;margin-bottom:8px}
+.kpi .kpi-metric{font-size:14px;font-weight:600;color:var(--w)}
+.kpi .kpi-target{font-size:28px;font-weight:800;color:var(--teal);font-family:var(--mono);margin:6px 0}
+.kpi .kpi-why{font-size:12px}
+.cadence{display:grid;grid-template-columns:repeat(4,1fr);background:var(--bg2);border-radius:8px;overflow:hidden;margin-top:24px}
+.cadence div{padding:14px 16px;font-size:13px;color:var(--g3);border-right:1px solid var(--bg3)}
+.cadence div:last-child{border-right:none}
+.cadence strong{color:var(--teal)}
+.plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.plan-card{background:var(--bg2);border-radius:10px;padding:24px;border-top:3px solid var(--teal)}
+.plan-card .plan-days{font-size:11px;font-weight:600;color:var(--teal);letter-spacing:1px;text-transform:uppercase;text-align:center;margin-bottom:4px}
+.plan-card h3{text-align:center;font-size:18px;font-weight:700;color:var(--w);margin-bottom:14px}
+.closing{min-height:80vh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.closing .deco{position:absolute;border-radius:50%;pointer-events:none;background:radial-gradient(circle,var(--tealGlow) 0%,transparent 70%);width:500px;height:500px;top:-100px;right:-120px}
+.closing h1{font-size:clamp(36px,6vw,56px);font-weight:800;color:var(--w);letter-spacing:-2px}
+.closing .tagline{font-size:16px;color:var(--g4);line-height:1.9;max-width:600px;margin-top:24px}
+.closing .contact{margin-top:28px}
+.closing .name{font-size:22px;font-weight:700;color:var(--w)}
+.closing .email{font-size:16px;color:var(--teal);margin-top:4px;text-decoration:none}
+.closing .email:hover{text-decoration:underline}
+.closing .loc{font-size:14px;color:var(--g5);margin-top:6px}
+.tools-footer{padding:20px 32px;text-align:center;font-size:12px;color:var(--g5);border-top:1px solid var(--bg3);letter-spacing:0.5px;max-width:var(--max);margin:0 auto}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:768px){section{padding:60px 20px}.cap-grid,.kpi-grid,.plan-grid{grid-template-columns:1fr}.split{grid-template-columns:1fr}.tl-row{grid-template-columns:1fr 1fr}.stats-strip{grid-template-columns:repeat(2,1fr)}.cadence{grid-template-columns:1fr 1fr}.top-nav .nav-links{display:none}}
+</style>
+</head>
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+<nav class="top-nav" id="topNav"><div class="top-nav-inner"><span class="nav-name">Jay Morse</span><div class="nav-links"><a href="#capabilities">Capabilities</a><a href="#savings">Impact</a><a href="#onboarding">Onboarding</a><a href="#model">TA Model</a><a href="#metrics">Metrics</a><a href="#contact">Contact</a></div></div></nav>
+
+<section class="hero" id="top"><div class="deco deco-1"></div><div class="deco deco-2"></div><div class="badge">People Ops & Talent Acquisition</div><h1>Jay Morse</h1><div class="subtitle">Building the hiring machine from zero to one</div><div class="divider-line"></div><p class="desc">10+ years scaling People functions at growth-stage startups. Engineering-first recruiting with AI-powered efficiency.</p><p class="companies">BlastPoint · Rapid7 · DivvyCloud</p><div class="stats-strip"><div class="stat"><div class="num">60%</div><div class="lbl">Faster Hiring</div></div><div class="stat"><div class="num">21d</div><div class="lbl">Avg Eng Fill</div></div><div class="stat"><div class="num">$400K+</div><div class="lbl">Cost Savings</div></div><div class="stat"><div class="num">300%</div><div class="lbl">Team Growth</div></div></div></section>
+<div class="section-divider"></div>
+
+<section id="capabilities"><div class="reveal"><h2>What I Bring</h2><div class="teal-bar"></div><p class="section-intro">I specialize in being the first People/TA hire — building the hiring machine while filling engineering, product, and GTM roles simultaneously.</p></div><div class="cap-grid reveal"><div class="cap-card"><div class="icon">🔍</div><h3>Technical Recruiting</h3><p>Deep experience hiring engineers, PMs, and technical leadership. Comfortable with eng-level conversations.</p></div><div class="cap-card"><div class="icon">🤖</div><h3>AI-Powered Workflow</h3><p>Slack summaries, AI-assisted comms, streamlined stages — only mission-critical interviews.</p></div><div class="cap-card"><div class="icon">⚙️</div><h3>Hiring Infrastructure</h3><p>ATS, scorecards, offer workflows — built from scratch at 3 startups.</p></div><div class="cap-card"><div class="icon">💰</div><h3>Comp Architecture</h3><p>Created first comp band structure at BlastPoint, instituting levels for team cohesion.</p></div><div class="cap-card"><div class="icon">📚</div><h3>Internal Resources</h3><p>Employee wikis, handbooks, org charts, benefits guides — single source of truth.</p></div><div class="cap-card"><div class="icon">🤝</div><h3>Cross-Functional</h3><p>Direct partnership with eng leads, product, and leadership to scope and launch roles.</p></div></div></section>
+<div class="section-divider"></div>
+
+<section id="savings"><div class="reveal"><h2>Hiring Speed = Money Saved</h2><div class="teal-bar"></div></div><div class="split reveal"><div style="display:flex;flex-direction:column;gap:16px"><div class="panel"><div class="panel-title">⏱ Time-to-Hire Comparison</div><div style="margin-top:16px"><div class="bar-row"><span class="bar-label" style="color:var(--g4)">Industry Avg</span><div class="bar-track"><div class="bar-fill ind" data-w="100"></div></div><span class="bar-val" style="color:var(--g4)">90d</span></div><div class="bar-row"><span class="bar-label" style="color:var(--g4)">"Good"</span><div class="bar-track"><div class="bar-fill ind" data-w="67"></div></div><span class="bar-val" style="color:var(--g4)">60d</span></div><div class="bar-row"><span class="bar-label" style="color:var(--g4)">Strong</span><div class="bar-track"><div class="bar-fill ind" data-w="50"></div></div><span class="bar-val" style="color:var(--g4)">45d</span></div><div class="bar-row"><span class="bar-label" style="color:var(--teal);font-weight:600">Jay Morse</span><div class="bar-track"><div class="bar-fill me" data-w="23"></div></div><span class="bar-val" style="color:var(--teal);font-weight:700">21d</span></div></div></div><div class="panel" style="background:var(--bg1);border:1px solid var(--bg3)"><div class="panel-title">👥 Projected Hiring Volume</div><table class="vol-tbl"><thead><tr><th>Scenario</th><th>Reqs</th><th>Fill Time</th><th>Output</th></tr></thead><tbody><tr><td>Conservative</td><td>2</td><td>28 days</td><td>10-12</td></tr><tr class="hl"><td>Target</td><td>2-3</td><td>21-28d</td><td>14-16</td></tr><tr><td>Aggressive</td><td>3</td><td>21 days</td><td>16-18</td></tr></tbody></table></div></div><div class="savings"><div class="panel-title">💵 The Cost Savings Math</div><div class="math"><span style="color:var(--teal);font-weight:600">~$500/day</span> cost-of-vacancy × <span style="color:var(--teal);font-weight:600">60-70 days faster</span> =<br><strong style="color:var(--w)">~$30-35K saved per hire</strong><br><br>Over 8-16 engineers:<br><span class="big">$240K–$560K in direct savings</span><br><br><span style="font-size:13px;color:var(--g5)">Not counting recruiter fees avoided by keeping hiring in-house.</span></div></div></div></section>
+<div class="section-divider"></div>
+
+<section id="ai-workflow"><div class="reveal"><h2>AI-Powered Hiring Workflow</h2><div class="teal-bar"></div><p class="section-intro">Streamlined stages. AI-assisted communication. Only mission-critical interviews.</p></div><div class="reveal"><div class="wf-row"><span class="wf-icon">🤖</span><div><h4>AI-Assisted Candidate Comms</h4><p>Personalized outreach at scale — drafts that feel human, not templated. Rejection notes with empathy.</p></div></div><div class="wf-row"><span class="wf-icon">📊</span><div><h4>Slack + ATS Pipeline Digests</h4><p>Automated updates pushed to hiring managers in Slack. No ATS login needed. Less friction = faster feedback.</p></div></div><div class="wf-row"><span class="wf-icon">⚡</span><div><h4>Mission-Critical Stages Only</h4><p>4-stage funnel: Recruiter Screen → Technical Assessment → Team Interview → Offer. Not seven rounds.</p></div></div><div class="wf-row"><span class="wf-icon">🔍</span><div><h4>AI-Powered Screening</h4><p>Resume parsing and qualification surfacing so sourcing time goes to outbound, not inbox triage.</p></div></div><div class="wf-row"><span class="wf-icon">📋</span><div><h4>Automated Scorecards</h4><p>Pre-built rubrics tied to role requirements. Auto-generated after each stage for data-driven debriefs.</p></div></div></div></section>
+<div class="section-divider"></div>
+
+<section id="onboarding"><div class="reveal"><h2>Onboarding: Built From Scratch</h2><div class="teal-bar"></div></div><div class="split reveal"><div class="panel"><div class="panel-title">🔄 HiBob Automation Workflow</div><div class="flow" style="margin-top:8px"><div class="step"><div class="step-num">1</div><div class="step-line"></div><div class="step-content"><h4>Offer Accepted</h4><p>Auto-create profile, IT provisioning, welcome email</p></div></div><div class="step"><div class="step-num">2</div><div class="step-line"></div><div class="step-content"><h4>Day -5: Pre-boarding</h4><p>Benefits docs, handbook, equipment shipping</p></div></div><div class="step"><div class="step-num">3</div><div class="step-line"></div><div class="step-content"><h4>Day 1: Kickoff</h4><p>Task list, Slack channels, 1:1 schedule, orientation</p></div></div><div class="step"><div class="step-num">4</div><div class="step-line"></div><div class="step-content"><h4>Day 7/14/30: Check-ins</h4><p>Pulse surveys, manager reminders, tracking</p></div></div><div class="step"><div class="step-num">5</div><div class="step-content"><h4>Ongoing</h4><p>Review cycles, probation tracking, retention flags</p></div></div></div></div><div style="display:flex;flex-direction:column;gap:16px"><div class="panel"><div class="panel-title">🏢 BlastPoint</div><ul><li>Branded Employee Handbook Lite (15 slides)</li><li>New hire welcome system + first-week schedule</li><li>30/60/90 milestone plans per role</li><li>Internal wiki: org chart, tools, benefits</li></ul></div><div class="panel"><div class="panel-title">☁️ DivvyCloud</div><ul><li>First-ever onboarding as first HR hire</li><li>Cross-functional tracks: Eng vs. GTM</li><li>Values workshops + buddy system</li><li>Scaled through Rapid7 acquisition</li></ul></div></div></div></section>
+<div class="section-divider"></div>
+
+<section id="culture"><div class="reveal"><h2>Culture, Values & Internal Resources</h2><div class="teal-bar"></div></div><div class="split reveal"><div class="panel"><div class="panel-title">📄 Employee Handbook Lite — BlastPoint</div><p style="font-size:13px;margin-bottom:16px">Branded visual companion deck used in onboarding:</p><div class="hb-row"><span class="hb-label">Company Story</span><span class="hb-val">CMU-founded AI/ML platform, venture competition winners</span></div><div class="hb-row"><span class="hb-label">Core Values</span><span class="hb-val">Everybody matters · Beat expectations · Innovation on a foundation · Cards on the table</span></div><div class="hb-row"><span class="hb-label">Mission</span><span class="hb-val">Reliable software to answer fundamental customer questions</span></div><div class="hb-row"><span class="hb-label">Benefits</span><span class="hb-val">15d vacation, 10 holidays, $500 home office, 401K, Rippling</span></div><div class="hb-row"><span class="hb-label">Performance</span><span class="hb-val">Annual reviews + quarterly check-ins, holiday + perf bonuses</span></div><div class="hb-row"><span class="hb-label">Conduct</span><span class="hb-val">Anti-discrimination, harassment, whistleblower, data privacy</span></div></div><div class="panel"><div class="panel-title">🏗 Infrastructure I Created</div><div class="infra-item"><span class="ii-icon">💰</span><span>First comp band structure with levels for team cohesion</span></div><div class="infra-item"><span class="ii-icon">📚</span><span>Internal wiki — handbooks, tools, benefits, org chart</span></div><div class="infra-item"><span class="ii-icon">📨</span><span>Company newsletter keeping remote teams connected</span></div><div class="infra-item"><span class="ii-icon">👥</span><span>45% engagement score boost via feedback programs</span></div><div class="infra-item"><span class="ii-icon">📋</span><span>Performance review system with calibration sessions</span></div><div class="infra-item"><span class="ii-icon">📄</span><span>Exit interview program for retention insights</span></div><div class="infra-item"><span class="ii-icon">⭐</span><span>DivvyCloud "Freedom to Innovate" values framework</span></div></div></div></section>
+<div class="section-divider"></div>
+
+<section id="model"><div class="reveal"><h2>TA Operating Model</h2><div class="teal-bar"></div><p class="section-intro">Hiring 8-16 engineers — month by month execution plan</p></div><div class="tl-row reveal"><div class="tl-card panel"><div class="tl-label">Month 1</div><h3>Foundation</h3><ul><li>HM intake sessions</li><li>ATS + AI integration</li><li>Interview framework</li><li>JD audit & rewrite</li><li>Sourcing strategy</li><li>Internal wiki v1</li></ul></div><div class="tl-card panel"><div class="tl-label">Month 2-3</div><h3>Pipeline & Hires</h3><ul><li>25-40 candidates/role</li><li>Slack pipeline digests</li><li>First 2-4 offers out</li><li>AI screening live</li><li>HRIS automation</li></ul></div><div class="tl-card panel"><div class="tl-label">Month 4-5</div><h3>Acceleration</h3><ul><li>2-3 hires/month</li><li>Top channel focus</li><li>HM coaching sessions</li><li>Full onboarding running</li></ul></div><div class="tl-card panel"><div class="tl-label">Month 6</div><h3>Close & Handoff</h3><ul><li>All roles filled/handed off</li><li>Full SOP docs</li><li>Recruiting playbook</li><li>Next steps rec</li></ul></div></div></section>
+<div class="section-divider"></div>
+
+<section id="funnel"><div class="reveal"><h2>Recruiting Funnel</h2><div class="teal-bar"></div><p class="section-intro">4 stages. Not 7. Every stage earns its place.</p></div><div class="split reveal"><div class="funnel"><div class="f-bar" style="width:100%"><span class="f-stage">Sourced / Applied</span><span class="f-vol">150-200</span><span class="f-conv">—</span></div><div class="f-bar" style="width:85%"><span class="f-stage">Recruiter Screen</span><span class="f-vol">30-40</span><span class="f-conv">20%</span></div><div class="f-bar" style="width:65%"><span class="f-stage">Technical Assessment</span><span class="f-vol">12-15</span><span class="f-conv">35-40%</span></div><div class="f-bar" style="width:48%"><span class="f-stage">Team Interview</span><span class="f-vol">5-8</span><span class="f-conv">45-50%</span></div><div class="f-bar" style="width:32%"><span class="f-stage">Offer Extended</span><span class="f-vol">2-3</span><span class="f-conv">70-80%</span></div><div class="f-bar hire" style="width:20%"><span class="f-stage">Hire</span><span class="f-vol">1</span><span class="f-conv">★</span></div></div><div class="panel"><div class="panel-title">📊 Sourcing Mix</div><div class="donut-wrap"><div class="donut"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="14" fill="none" stroke="#334155" stroke-width="4.5" stroke-dasharray="3.1 96.9" stroke-dashoffset="0"/><circle cx="18" cy="18" r="14" fill="none" stroke="#475569" stroke-width="4.5" stroke-dasharray="7.5 92.5" stroke-dashoffset="-3.1"/><circle cx="18" cy="18" r="14" fill="none" stroke="#334155" stroke-width="4.5" stroke-dasharray="11.2 88.8" stroke-dashoffset="-10.6"/><circle cx="18" cy="18" r="14" fill="none" stroke="#14B8A6" stroke-width="4.5" stroke-dasharray="12.5 87.5" stroke-dashoffset="-21.8"/><circle cx="18" cy="18" r="14" fill="none" stroke="#0D9488" stroke-width="4.5" stroke-dasharray="28.1 71.9" stroke-dashoffset="-34.3"/></svg></div><div class="donut-legend"><span><span class="dot" style="background:#0D9488"></span>LinkedIn 45%</span><span><span class="dot" style="background:#14B8A6"></span>Referrals 20%</span><span><span class="dot" style="background:#334155"></span>Inbound 18%</span><span><span class="dot" style="background:#475569"></span>Niche 12%</span><span><span class="dot" style="background:#334155"></span>Agencies 5%</span></div></div></div></div></section>
+<div class="section-divider"></div>
+
+<section id="metrics"><div class="reveal"><h2>Success Metrics & KPIs</h2><div class="teal-bar"></div></div><div class="kpi-grid reveal"><div class="kpi"><div class="kpi-icon">⏱</div><div class="kpi-metric">Time-to-Hire</div><div class="kpi-target">21-28d</div><div class="kpi-why">Proven avg vs. 3-4 month industry standard</div></div><div class="kpi"><div class="kpi-icon">✅</div><div class="kpi-metric">Offer Accept Rate</div><div class="kpi-target">≥ 80%</div><div class="kpi-why">Strong candidate experience + competitive comp</div></div><div class="kpi"><div class="kpi-icon">👤</div><div class="kpi-metric">90-Day Retention</div><div class="kpi-target">≥ 90%</div><div class="kpi-why">Right hires = less costly early attrition</div></div><div class="kpi"><div class="kpi-icon">📈</div><div class="kpi-metric">Source Quality</div><div class="kpi-target">By channel</div><div class="kpi-why">Which channels produce hires vs. just volume?</div></div><div class="kpi"><div class="kpi-icon">🤝</div><div class="kpi-metric">HM Satisfaction</div><div class="kpi-target">Quarterly</div><div class="kpi-why">Quality candidates + strong partnership</div></div><div class="kpi"><div class="kpi-icon">💵</div><div class="kpi-metric">Cost Per Hire</div><div class="kpi-target">Optimize</div><div class="kpi-why">Agency fees, tools, time invested per fill</div></div></div><div class="cadence reveal"><div><strong>Weekly:</strong> Pipeline snapshots</div><div><strong>Bi-weekly:</strong> HM calibration 1:1s</div><div><strong>Monthly:</strong> Exec dashboard</div><div><strong>Quarterly:</strong> Full retrospective</div></div></section>
+<div class="section-divider"></div>
+
+<section id="plan"><div class="reveal"><h2>30 / 60 / 90 Day Plan</h2><div class="teal-bar"></div></div><div class="plan-grid reveal"><div class="plan-card panel"><div class="plan-days">Days 1-30</div><h3>Foundation</h3><ul><li>HM intake for all roles</li><li>ATS + AI workflow setup</li><li>Interview framework</li><li>JD audit and rewrite</li><li>Comp band research</li><li>Wiki v1 + onboarding v1</li><li>HiBob automation</li></ul></div><div class="plan-card panel"><div class="plan-days">Days 31-60</div><h3>Execution</h3><ul><li>Pipelines (25-40/role)</li><li>First 2-4 offers out</li><li>Slack summaries live</li><li>Candidate experience running</li><li>Comp benchmarking done</li><li>Referral program launched</li></ul></div><div class="plan-card panel"><div class="plan-days">Days 61-90</div><h3>Acceleration</h3><ul><li>4-8 hires closed</li><li>Funnel optimization</li><li>Full SOP documentation</li><li>Recruiting playbook v1</li><li>Monthly exec dashboard</li><li>6-month projection</li></ul></div></div></section>
+<div class="section-divider"></div>
+
+<section class="closing" id="contact"><div class="deco"></div><h1>Let's Build Something.</h1><div style="width:48px;height:3px;background:var(--teal);margin:16px 0"></div><div class="tagline">I've built this exact function — from scratch — at three different startups.<br>I'm not going to spend the first month learning the space.<br>I'm going to spend it building infrastructure, filling your pipeline,<br>and saving you hundreds of thousands in hiring costs.</div><div class="contact"><div class="name">Jay Morse</div><a class="email" href="mailto:morse.jay@gmail.com">morse.jay@gmail.com</a><div class="loc">Erie, CO · Remote · Available immediately</div></div></section>
+<div class="tools-footer">Greenhouse · Lever · Ashby · HiBob · LinkedIn Recruiter · Rippling · BambooHR · Lattice · Notion · DocuSign</div>
+
+<script>
+window.addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('scrollProgress').style.width=(window.scrollY/h*100)+'%';document.getElementById('topNav').classList.toggle('visible',window.scrollY>400)});
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible')})},{threshold:0.15});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const barObs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.querySelectorAll('.bar-fill[data-w]').forEach(b=>{b.style.width=b.dataset.w+'%'})})},{threshold:0.3});
+document.querySelectorAll('.panel').forEach(el=>barObs.observe(el));
+document.querySelectorAll('.bar-fill[data-w]').forEach(b=>{b.style.width='0%'});
+</script>
+</body>
+</html>
