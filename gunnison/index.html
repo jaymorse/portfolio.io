@@ -115,6 +115,28 @@ td.season{color:var(--tealL);font-weight:600;font-family:var(--mono);white-space
 @keyframes fdots{0%{content:""}25%{content:"·"}50%{content:"··"}75%{content:"···"}100%{content:""}}
 @media (prefers-reduced-motion:reduce){.fisher .cap .dots::after{content:"···";animation:none}}
 
+/* ── This Week's Plan (editorial snapshot) ── */
+.plan .when{display:inline-block;font-family:var(--mono);font-size:11px;color:var(--tealL);background:rgba(45,212,191,.12);border:1px solid rgba(45,212,191,.25);padding:3px 11px;border-radius:20px;margin-bottom:14px;letter-spacing:.3px}
+.plan .lede{font-size:14px;color:var(--g3);max-width:840px;margin-bottom:10px}
+.plan .lede strong{color:var(--w);font-weight:600}
+.plan .callout{background:var(--bg2);border:1px solid var(--line);border-left:3px solid var(--teal);border-radius:8px;padding:13px 16px;margin:16px 0;font-size:13px;color:var(--g3)}
+.plan .callout.red{border-left-color:var(--bad)}
+.plan .callout strong{color:var(--w)}
+.plan h3.sub{font-size:12px;font-weight:700;color:var(--g4);text-transform:uppercase;letter-spacing:1.5px;margin:30px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.spotgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.spot{background:linear-gradient(180deg,var(--bg2),var(--bg1));border:1px solid var(--line);border-left:3px solid var(--g5);border-radius:12px;padding:16px 18px}
+.spot.hot{border-left-color:var(--warn)}
+.spot h4{font-size:15px;font-weight:700;color:var(--w);margin-bottom:8px;line-height:1.3}
+.spot .meta{font-family:var(--mono);font-size:10px;color:var(--g5);text-transform:uppercase;letter-spacing:.4px;margin-bottom:10px;display:flex;flex-wrap:wrap;gap:7px;align-items:center}
+.spot p{font-size:13px;color:var(--g4);line-height:1.55}
+.ptag{display:inline-block;font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:5px;text-transform:uppercase}
+.ptag.easy{background:rgba(52,211,153,.16);color:var(--good)}
+.ptag.med{background:rgba(245,158,11,.16);color:var(--warn)}
+.ptag.skip{background:rgba(248,113,113,.16);color:var(--bad)}
+.flybox{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:18px;font-size:13px;line-height:1.75;color:var(--g4)}
+.flybox strong{color:var(--tealL)}
+.plan .src{font-size:11px;color:var(--g5);margin-top:14px;line-height:1.6}
+
 footer{border-top:1px solid var(--line);padding:30px 0 50px;font-size:12px;color:var(--g5);line-height:1.7}
 footer b{color:var(--g4)}
 .disclaimer{margin-top:14px;font-size:11px;color:var(--g5);max-width:760px}
@@ -158,6 +180,132 @@ footer b{color:var(--g4)}
   <section>
     <div class="sec-title">Weather · Gunnison, CO</div>
     <div id="weather"><!-- pixel fly-fisher loader injected by JS --></div>
+  </section>
+
+  <section class="plan">
+    <div class="sec-title">This Week's Plan</div>
+    <span class="when">Snapshot · Sun Jul 26 – Sat Aug 1, 2026 · 30-mi radius of Gunnison</span>
+
+    <p class="lede"><strong>Low-water year.</strong> Flows are well under median for late July — fish are concentrated, spooky, and afternoon water temps push into the danger zone on the freestone and meadow streams. CPW has <strong>voluntary noon-to-midnight closures</strong> on Tomichi Creek (below Sargents), Cochetopa Creek (below the La Garita boundary), and the Lake Fork — water hit 78&deg;F on Tomichi and Cochetopa in mid-July.</p>
+    <p class="lede">The upside: the Taylor is a dam-fed refrigerator, the upper Gunnison is holding low-60s, and the first half of the week brings monsoon clouds that knock temps down and turn bugs on. This is a <strong>fish-early week</strong>: on the water by 7, off the warm stuff by noon, tailwater or evening caddis after that.</p>
+
+    <h3 class="sub">Gauge Snapshot · Sat 7/25 AM</h3>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Gauge</th><th>Flow</th><th>Water temp</th><th>Read</th></tr></thead>
+        <tbody>
+          <tr><td>Gunnison R. near Gunnison</td><td>332 cfs</td><td>58&deg;F @ 10am</td><td>Fishable and clear. Watch temps after 2pm.</td></tr>
+          <tr><td>Taylor R. at Almont</td><td>264 cfs</td><td>54&deg;F</td><td>Cold all day. Your afternoon insurance.</td></tr>
+          <tr><td>Taylor below dam</td><td>226 cfs</td><td>cold</td><td>Great wading level for the canyon.</td></tr>
+          <tr><td>East R. at Almont</td><td>70 cfs</td><td>57&deg;F</td><td>Low and gin clear. Morning stealth game.</td></tr>
+          <tr><td>Tomichi Cr. at Gunnison</td><td>19.5 cfs</td><td>64&deg;F @ 10:30am</td><td>Marginal by mid-morning. Mostly a skip.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub">Weather Window</h3>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Day</th><th>Hi / Lo</th><th>Storms</th><th>Call</th></tr></thead>
+        <tbody>
+          <tr><td>Sun 7/26</td><td>80 / 55</td><td>35%</td><td>Cloud cover = bug cover. Fish 7am–1pm, off when thunder starts.</td></tr>
+          <tr><td>Mon 7/27</td><td>79 / 54</td><td>35%</td><td>Same play. Best PMD/caddis light of the week.</td></tr>
+          <tr><td>Tue 7/28</td><td>78 / 52</td><td>45%</td><td>Coolest day. Meadow-creek morning, then bail early.</td></tr>
+          <tr><td>Wed 7/29</td><td>77 / 50</td><td>45%</td><td>Storms likely PM. Morning only, or Taylor canyon.</td></tr>
+          <tr><td>Thu 7/30</td><td>80 / 50</td><td>25%</td><td>Drying out. Full day: freestone AM, tailwater PM.</td></tr>
+          <tr><td>Fri 7/31</td><td>84 / 49</td><td>10%</td><td>Hot and clear. Dawn patrol, then Taylor. Evening caddis in town.</td></tr>
+          <tr><td>Sat 8/1</td><td>86 / 51</td><td>0%</td><td>Hottest day. Tailwater or high country only after 11am.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="src">Monsoon rule: first rumble of thunder, get off the water. You're holding a 9-foot graphite lightning rod.</p>
+
+    <h3 class="sub">The Spots</h3>
+    <div class="spotgrid">
+      <div class="spot hot">
+        <h4>1. Gunnison Town Stretch — Van Tuyl / Redden SWA, Whitewater Park</h4>
+        <div class="meta"><span class="ptag easy">Easy</span> 0–3 mi · walk/bike from the house</div>
+        <p>Your backyard. The Gunnison River SWA plus the Whitewater Park give you miles of public wading through town — browns, rainbows, whitefish. At 332 cfs it wades easily and the evening caddis (5:30–8pm) is the headliner as water temp drops back to safe. Riffle-corner seams with a caddis dry or hopper-dropper along grassy banks. Zero-friction, post-bedtime option.</p>
+      </div>
+      <div class="spot hot">
+        <h4>2. Almont &amp; the Upper Gunnison (Hwy 135 corridor)</h4>
+        <div class="meta"><span class="ptag easy">Easy</span> 10 mi, ~15 min · roadside pullouts</div>
+        <p>A string of public easements and pullouts off 135 from the Almont confluence toward town. Classic riffle-run water, best freestone fish in the valley. Mornings: stonefly nymph trailing a PMD. Midday: hoppers and ants tight to the banks. Float-boat traffic midday; wade anglers own it before 9am.</p>
+      </div>
+      <div class="spot">
+        <h4>3. Shady Island River Park</h4>
+        <div class="meta"><span class="ptag easy">Easy</span> 3 mi N on 135 · 2-min walk · day-use fee</div>
+        <p>County river park just north of town, the standard put-in for the town float. Easy bank/wade access, good caddis water. Gets boat-launch traffic mid-morning; fish it early or in the evening.</p>
+      </div>
+      <div class="spot hot">
+        <h4>4. Taylor River Canyon (Almont to the dam, Hwy 742)</h4>
+        <div class="meta"><span class="ptag med">Easy access / Med wading</span> 12–28 mi, 20–40 min · National Forest</div>
+        <p>The workhorse of your week. Dam-controlled at 226 cfs, cold top to bottom all day — fish here when everything else is too warm. Lower stretch has private checkerboard (respect signs); the canyon proper is mostly public FS with pullouts everywhere. The bottom is greased bowling balls — studs or a wading staff earn their keep. Caddis, yellow sallies, PMDs; hopper-dropper in the pockets.</p>
+      </div>
+      <div class="spot">
+        <h4>5. Taylor C&amp;R "Hog Trough" (below Taylor Dam)</h4>
+        <div class="meta"><span class="ptag easy">Easy</span> ~30 mi, 45 min · park-and-walk · PhD fishing</div>
+        <p>The famous half-mile below the dam: mysis-fed rainbows the size of your leg, in plain sight, ignoring you. 6x–7x, mysis patterns, midges 20–24, long leaders, and company — the most crowded water in the basin. Worth one morning for the spectacle. Ego optional; leave it in the truck.</p>
+      </div>
+      <div class="spot">
+        <h4>6. East River at Roaring Judy Hatchery</h4>
+        <div class="meta"><span class="ptag easy">Easy</span> 14 mi, 20 min · flat walking · special regs</div>
+        <p>The main public window on an otherwise private river. At 70 cfs it's skinny and transparent — long leaders, downstream presentations, one bad cast per pool. Big browns live here; kokanee stage in fall. Flies/lures only; check the regs sign. Strictly a morning venue this week.</p>
+      </div>
+      <div class="spot">
+        <h4>7. Cochetopa Creek (Hwy 114 south)</h4>
+        <div class="meta"><span class="ptag med">Easy–Med</span> 20–28 mi, 30–40 min · ⚠ mornings only</div>
+        <p>Classic meadow hopper water with browns that eat like they mean it. Good access at the Coleman easement and the BLM rec site. But it's on the voluntary closure list below the La Garita boundary — noon cutoff, no exceptions. On the water at 7, hopper-ant, done by 11:30. Tuesday's cool cloudy morning is the day.</p>
+      </div>
+      <div class="spot">
+        <h4>8. Quartz Creek (Ohio City / Pitkin)</h4>
+        <div class="meta"><span class="ptag med">Easy–Med</span> 24–28 mi, 40 min · roadside near Pitkin</div>
+        <p>Small-stream antidote to Taylor crowds. Browns and brookies, mostly unbothered, in pocket water along the Pitkin road. A 3wt, a box of attractor dries (Stimulator, PMX, ant), and nobody around. Higher and cooler than the valley floor, so it buys you more of the day. Fish the public water up high near Pitkin.</p>
+      </div>
+      <div class="spot">
+        <h4>9. Spring Creek (Taylor tributary, CR 744)</h4>
+        <div class="meta"><span class="ptag med">Easy–Med</span> 18–24 mi, 35 min · forest access up the drainage</div>
+        <p>The local shop calls it one of the most consistent creeks in the area, and they're right. Cold, shaded, wild browns and rainbows, forest access most of its length once past the lower private. Perfect storm-dodging option — short casts, quick exits.</p>
+      </div>
+      <div class="spot">
+        <h4>10. Blue Mesa Reservoir (Iola basin, shore access)</h4>
+        <div class="meta"><span class="ptag easy">Easy</span> 10–25 mi W on Hwy 50 · park-and-walk shoreline</div>
+        <p>Wildcard, and the toddler-compatible option: shoreline access at Iola and points west, browns and rainbows cruising the banks early and late, kokanee out deep. Streamer or a big attractor dry off the points at dawn. Down badly this year, so expect long mudflats at some access points.</p>
+      </div>
+      <div class="spot" style="border-left-color:var(--bad)">
+        <h4>Skips, and why</h4>
+        <div class="meta"><span class="ptag skip">Pass this week</span></div>
+        <p><strong style="color:var(--g3)">Tomichi Creek</strong> — 19 cfs and 64&deg;F before lunch, closure below Sargents. Torturing heat-stressed fish isn't sport. <strong style="color:var(--g3)">Ohio Creek valley</strong> — almost entirely private ranch; public water only way up near Ohio Pass, small fish. <strong style="color:var(--g3)">Lake Fork at Gateview</strong> — edge of the radius, historically low and on the closure list.</p>
+      </div>
+    </div>
+
+    <h3 class="sub">Fly Box for the Week</h3>
+    <div class="flybox">
+      <strong>Dries:</strong> Elk Hair / Corn-fed Caddis 14–16, PMD sparkle dun 16–18, Yellow Sally 14–16, hoppers (tan/gold) 8–12, cinnamon ants 14–16, PMX/Stimulator for the creeks.<br>
+      <strong>Nymphs:</strong> Tungsten Pheasant Tail 14–18, Pat's Rubber Legs 8–10, caddis pupa 14–16, Perdigon 16–18.<br>
+      <strong>Hog Trough only:</strong> Mysis 16–18, midges 20–24, 6x–7x fluoro.<br>
+      <strong>Storm-cloud sleeper:</strong> a few BWOs 18–20 — monsoon overcast can pop an olive hatch out of nowhere.
+    </div>
+
+    <h3 class="sub">Day-by-Day Call Sheet</h3>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Day</th><th>Plan A</th><th>Plan B / evening</th></tr></thead>
+        <tbody>
+          <tr><td>Sun</td><td>Almont pullouts, 7am, stone + PMD nymph rig</td><td>Town-stretch caddis after dinner</td></tr>
+          <tr><td>Mon</td><td>East River at Roaring Judy, early, stealth dries</td><td>Taylor canyon if storms hold off</td></tr>
+          <tr><td>Tue</td><td>Cochetopa hopper morning (hard stop 11:30)</td><td>Rest, family, tie flies through the storm</td></tr>
+          <tr><td>Wed</td><td>Taylor canyon pockets — rain doesn't matter on a tailwater</td><td>Town caddis if the evening clears</td></tr>
+          <tr><td>Thu</td><td>Hog Trough pilgrimage, early to beat the lot</td><td>Fish down the canyon on the way home</td></tr>
+          <tr><td>Fri</td><td>Quartz or Spring Creek — cool, shaded, empty</td><td>Best caddis evening of the week in town</td></tr>
+          <tr><td>Sat</td><td>Dawn on the town stretch, done by 11</td><td>Blue Mesa shoreline at dusk, or call it</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout red"><strong>Carry a thermometer.</strong> 65&deg;F is the walk-away number on the Gunnison, East, and every creek. The Taylor is exempt — that's the whole point of it. Land fish fast, keep them wet, skip the hero shots.</div>
+    <div class="callout"><strong>Paperwork:</strong> Colorado license required; SWA access (Van Tuyl/Redden, Coleman) requires a valid hunting or fishing license for entry. Shady Island charges day-use. Check regs signs at Roaring Judy and the Taylor C&amp;R.</div>
+    <p class="src">Flows are provisional USGS data pulled Sat 7/25 AM; they'll drift down through the week. Closure status per CPW as of July 22. Local ground truth: Gunnison River Fly Shop (town), Willowfly Anglers (Almont), Dragonfly Anglers (CB).</p>
   </section>
 
   <section>
